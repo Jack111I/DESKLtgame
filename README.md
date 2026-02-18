@@ -1,3 +1,6 @@
+<img width="734" height="241" alt="Untitled-9 (1)" src="https://github.com/user-attachments/assets/535842aa-f40e-4631-b907-ecd1620b4046" />
+
+
 # Cloud Desktop Gaming Codespace
 
 This Codespace provides a full XFCE desktop environment with gaming and Windows application support.
