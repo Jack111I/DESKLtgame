@@ -1,0 +1,36 @@
+{
+  "name": "Desktop-Lite Gaming Codespace",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
+  "features": {
+    "ghcr.io/devcontainers/features/desktop-lite:1": {
+      "noVncDotfilesSuffix": "desktop-lite",
+      "vscodeExtensions": []
+    }
+  },
+  "remoteUser": "vscode",
+  "remoteEnv": {
+    "DISPLAY": ":1"
+  },
+  "onCreateCommand": "bash .devcontainer/install-gaming-deps.sh",
+  "postCreateCommand": "bash .devcontainer/setup-user.sh",
+  "forwardPorts": [6080],
+  "portsAttributes": {
+    "6080": {
+      "label": "Desktop (noVNC)",
+      "onAutoForward": "notify"
+    }
+  },
+  "mounts": [
+    "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"
+  ],
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      },
+      "extensions": [
+        "ms-vscode-remote.remote-containers"
+      ]
+    }
+  }
+}
